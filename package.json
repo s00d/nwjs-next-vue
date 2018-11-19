@@ -1,0 +1,21 @@
+{
+  "name": "nwjs-text-vue",
+  "version": "0.0.0",
+  "description": "A NW.js & Vue.js quick start boilerplate.",
+  "main": "meta.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/elegantweb/nwjs-vue.git"
+  },
+  "keywords": [
+    "nwjs",
+    "vue",
+    "boilerplate"
+  ],
+  "author": "Pavel Kuzmin <Virus191288@gmail.com> (github.com/s00d)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/s00d/nwjs-next-vue/issues"
+  },
+  "homepage": "https://github.com/s00d/nwjs-next-vue#readme"
+}

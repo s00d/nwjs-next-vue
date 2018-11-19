@@ -1,0 +1,88 @@
+{
+  "name": "{{ name }}",
+  "label": "{{ label }}",
+  "description": "{{ description }}",
+  "version": "1.0.0",
+  "author": "{{ author }}",
+  "private": true,
+  "main": "./dist/bg/bg.js",
+  "node-remote": "*://localhost/*",
+  "window": {
+    "width": 1000,
+    "height": 563,
+    "frame": true
+  },
+  "build": {
+    "files": [
+      "node_modules/**/*",
+      "dist/**/*"
+    ],
+    "output": "./releases",
+    "nwVersion": "0.34.3",
+    "nwPlatforms": [
+      "win32",
+      "win64",
+      "osx64",
+      "linux32",
+      "linux64"
+    ]
+  },
+  "scripts": {
+    "dev": "cross-env NODE_ENV=development node build/dev-runner.js --enable-logging=stderr",
+    "build": "cross-env NODE_ENV=production node build/runner.js"
+  },
+  "chromium-args": " --enable-logging=stderr --remote-debugging-port=9222",
+  "devDependencies": {
+    "ajv": "^6.5.3",
+    {{#isEnabled plugins 'axios'}}
+    "axios": "^0.18.0",
+    {{/isEnabled}}
+    "@babel/core": "^7.1.6",
+    "@babel/plugin-proposal-class-properties": "^7.1.0",
+    "@babel/plugin-proposal-export-default-from": "^7.0.0",
+    "@babel/plugin-proposal-export-namespace-from": "^7.0.0",
+    "@babel/plugin-proposal-json-strings": "^7.0.0",
+    "@babel/plugin-proposal-nullish-coalescing-operator": "^7.0.0",
+    "@babel/plugin-proposal-object-rest-spread": "^7.0.0",
+    "@babel/plugin-proposal-optional-chaining": "^7.0.0",
+    "@babel/plugin-proposal-throw-expressions": "^7.0.0",
+    "@babel/plugin-syntax-dynamic-import": "^7.0.0",
+    "@babel/plugin-transform-runtime": "^7.1.0",
+    "@babel/preset-env": "^7.1.6",
+    "@babel/runtime": "^7.1.5",
+    "@vue/babel-plugin-transform-vue-jsx": "^0.1.0",
+    "ajv": "^6.5.3",
+    "axios": "^0.18.0",
+    "babel-loader": "^8.0.4",
+    "babel-minify-webpack-plugin": "^0.3.1",
+    "copy-webpack-plugin": "^4.6.0",
+    "css-loader": "^1.0.1",
+    "cssnano": "^4.1.7",
+    "extract-text-webpack-plugin": "^4.0.0-beta.0",
+    "file-loader": "^2.0.0",
+    "fs-extra": "^7.0.1",
+    "html-webpack-plugin": "^4.0.0-beta.4",
+    "node-sass": "^4.9.2",
+    "npm-which": "^3.0.1",
+    "nw-builder": "^3.5.4",
+    "nw-vue-devtools": "^1.2.0",
+    "nwjs-builder-phoenix": "^1.14.7",
+    "sass-loader": "^7.0.1",
+    "url-loader": "^1.1.2",
+    "vue": "^2.5.17",
+    "vue-loader": "^15.2.7",
+    "vue-style-loader": "^4.1.2",
+    "webpack": "^4.25.1",
+    "webpack-dev-server": "^3.1.10",
+    "webpack-hot-middleware": "^2.22.3",
+    "mini-css-extract-plugin": "^0.4.4",
+    "style-loader": "^0.23.1"
+    {{#isEnabled plugins 'vue-router'}}
+    "vue-router": "^3.0.1",
+    {{/isEnabled}}
+    "vue-template-compiler": "^2.5.17",
+    {{#isEnabled plugins 'vuex'}}
+    "vuex": "^3.0.1"
+    {{/isEnabled}}
+  }
+}
