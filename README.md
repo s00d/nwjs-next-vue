@@ -3,7 +3,7 @@
 > A NW.js & Vue.js quick start boilerplate.
 
 ## What new?
-Update to lasst version 
+Update to last version
 
 > webpack 4
 > babel 7
